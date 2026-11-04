@@ -44,3 +44,16 @@ footer a{color:var(--fine)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
 .shot picture,.shot img{display:block;width:100%;height:auto}.shot img{border-radius:12px;box-shadow:var(--shadow);border:1px solid rgba(128,128,140,.25)}
+
+.tabs{display:flex;gap:4px;background:var(--tile);border-radius:11px;padding:4px;margin-bottom:14px}
+.tabs button{flex:1;min-width:0;border:0;background:none;color:var(--fine);font:inherit;font-size:14px;font-weight:600;padding:8px 2px;border-radius:8px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--bg);color:var(--fg);box-shadow:0 1px 3px rgba(0,0,0,.16)}
+.tabs button:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
+.stack{position:relative;aspect-ratio:8/5;margin:0 22px 22px 0;cursor:pointer}
+.card{position:absolute;inset:0;transition:transform .36s ease,opacity .36s ease}
+.card[data-pos="0"]{z-index:5}.card[data-pos="1"]{z-index:4;transform:translate(11px,11px);opacity:.8}.card[data-pos="2"]{z-index:3;transform:translate(22px,22px);opacity:.5}
+.card[data-pos="3"],.card[data-pos="4"]{z-index:2;transform:translate(22px,22px);opacity:0}
+.card.out{animation:shuffle .46s ease}
+@keyframes shuffle{0%{z-index:6;transform:none;opacity:1}45%{z-index:6;transform:translate(9%,-3%) rotate(2deg);opacity:1}46%{z-index:1}100%{z-index:1}}
+@media (prefers-reduced-motion:reduce){.card.out{animation:none}}
+@media (max-width:520px){.tabs button{font-size:13px}}

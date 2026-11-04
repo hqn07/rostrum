@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>Rostrum: a Mac app for the classes you can't afford to miss a word of</title><meta name="description" content="Record a lecture, get a transcript and clear study notes, then quiz yourself. A free Mac app.">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css?v=2"></head>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css?v=4"></head>
 <body><a class="skip" href="#main">Skip to content</a>
 <header><div class="wrap"><a class="brand" href="/"><img src="/icon.svg" alt="">Rostrum</a><a class="btn sm" href="https://github.com/hqn07/rostrum/releases/latest/download/Rostrum.dmg">Download</a></div></header>
 <main id="main"><div class="wrap">
@@ -11,8 +11,9 @@
 <p class="lead">Hard subjects, fast lectures, professors who are hard to follow. Record it once, then study from all of it.</p>
 <a class="btn" href="https://github.com/hqn07/rostrum/releases/latest/download/Rostrum.dmg">Download for Mac</a>
 <p class="fine">Free to download · Apple silicon Mac · macOS 14 or later</p></div>
-<div class="shot"><picture><source media="(prefers-color-scheme: dark)" srcset="img/rostrum-notes-dark.jpg"><img src="img/rostrum-notes.jpg" width="1280" height="800" alt="The Rostrum window on a sample lecture note titled Maxwell's Equations for Physics II: headings, the displacement current equation, a short bullet list and an audio player with the recording, beside a sidebar of Today, Assignments, Schedule, Courses, Notes, Voice Note, Study and Flashcards."></picture>
-<p class="cap">Sample content.</p></div></section>
+<div class="shot"><div class="tabs" role="tablist" aria-label="Rostrum screens"><button type="button" role="tab" id="t-notes" aria-controls="stack" aria-selected="true" data-cap="Clear notes you can read and edit, with the recording right there.">Notes</button><button type="button" role="tab" id="t-voice" aria-controls="stack" aria-selected="false" tabindex="-1" data-cap="Your lecture, written down as it happens.">Record</button><button type="button" role="tab" id="t-schedule" aria-controls="stack" aria-selected="false" tabindex="-1" data-cap="Your classes and due dates, in one week.">Schedule</button><button type="button" role="tab" id="t-flashcards" aria-controls="stack" aria-selected="false" tabindex="-1" data-cap="Spaced review of cards made from your notes.">Cards</button><button type="button" role="tab" id="t-study" aria-controls="stack" aria-selected="false" tabindex="-1" data-cap="A tutor that answers from your own material, with your own AI key.">Tutor</button></div>
+<div class="stack" id="stack" role="tabpanel" aria-labelledby="t-notes"><div class="card" data-pos="0"><picture><source media="(prefers-color-scheme: dark)" srcset="img/rostrum-notes-dark.jpg"><img src="img/rostrum-notes.jpg" width="1280" height="800" alt="The Rostrum window on a sample lecture note titled Maxwell's Equations for Physics II, with its recording bar."></picture></div><div class="card" data-pos="1"><picture><source media="(prefers-color-scheme: dark)" srcset="img/rostrum-voice-dark.jpg"><img src="img/rostrum-voice.jpg" width="1280" height="800" alt="Voice Note recording a lecture, with the transcript below the sound meter."></picture></div><div class="card" data-pos="2"><picture><source media="(prefers-color-scheme: dark)" srcset="img/rostrum-schedule-dark.jpg"><img src="img/rostrum-schedule.jpg" width="1280" height="800" alt="The Schedule week with four classes and three due dates."></picture></div><div class="card" data-pos="3"><picture><source media="(prefers-color-scheme: dark)" srcset="img/rostrum-flashcards-dark.jpg"><img src="img/rostrum-flashcards.jpg" width="1280" height="800" alt="A flashcard review showing a question about Maxwell's equations."></picture></div><div class="card" data-pos="4"><picture><source media="(prefers-color-scheme: dark)" srcset="img/rostrum-study-dark.jpg"><img src="img/rostrum-study.jpg" width="1280" height="800" alt="The Study tutor explaining displacement current from the course notes and slides."></picture></div></div>
+<p class="cap"><span id="cap">Clear notes you can read and edit, with the recording right there.</span> Sample content.</p></div></section>
 <h2 class="sr">How it works</h2>
 <ol class="steps" role="list">
 <li class="step"><div class="num" aria-hidden="true">1</div><h3>Record</h3><p>Start Voice Note in class. It writes the lecture down as it happens.</p></li>
@@ -29,4 +30,25 @@
 <li><strong>Your data stays yours.</strong> Stored on your Mac, no account needed. <a href="/privacy.html">What is sent, and when</a>.</li></ul></section>
 </div></main>
 <footer><div class="wrap"><span>© 2026 Rostrum</span><a href="/privacy.html">Privacy</a><a href="/support.html">Support</a></div></footer>
+<script>
+(function(){
+var tabs=[].slice.call(document.querySelectorAll('.tabs button')),cards=[].slice.call(document.querySelectorAll('.stack .card')),stack=document.getElementById('stack'),cap=document.getElementById('cap'),now=0,n=cards.length;
+function show(i,focus){
+ i=(i+n)%n;if(i===now)return;
+ var old=cards[now];old.classList.remove('out');void old.offsetWidth;old.classList.add('out');
+ now=i;
+ cards.forEach(function(c,j){c.dataset.pos=(j-i+n)%n});
+ tabs.forEach(function(t,j){t.setAttribute('aria-selected',j===i);t.tabIndex=j===i?0:-1});
+ cap.textContent=tabs[i].dataset.cap;stack.setAttribute('aria-labelledby',tabs[i].id);
+ if(focus)tabs[i].focus();
+}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i)})});
+stack.addEventListener('click',function(){show(now+1)});
+cards.forEach(function(c){c.addEventListener('animationend',function(){c.classList.remove('out')})});
+document.querySelector('.tabs').addEventListener('keydown',function(e){
+ if(e.key==='ArrowRight'){e.preventDefault();show(now+1,true)}
+ if(e.key==='ArrowLeft'){e.preventDefault();show(now-1,true)}
+});
+})();
+</script>
 </body></html>
