@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Rostrum</title>
+    <link>https://rostrumstudy.app/appcast.xml</link>
+    <description>Rostrum updates</description>
+    <language>en</language>
+    <item>
+      <title>Version 3.2.0</title>
+      <pubDate>Wed, 04 Nov 2026 22:29:21 +0000</pubDate>
+      <sparkle:version>4</sparkle:version>
+      <sparkle:shortVersionString>3.2.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul>
+<li><b>Updates inside the app:</b> Rostrum checks for new versions and installs them with one click.</li>
+</ul>]]></description>
+      <enclosure url="https://github.com/hqn07/rostrum/releases/download/v3.2.0/Rostrum-3.2.0.dmg" sparkle:edSignature="idADfNa5dijM41szasqPHPY+Spf9lGeCm5r7nW6OWjvV6b0V8AoTVBkWh9NIIEbCX/ZoqIiI/X7goph3FxTlDw==" length="20511964" type="application/octet-stream"/>
+    </item>
+  </channel>
+</rss>
