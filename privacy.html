@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Privacy · Rostrum</title><meta name="description" content="What Rostrum keeps on your Mac, and what it sends.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap"><a class="brand" href="/"><img src="/icon.svg" alt="">Rostrum</a><a class="btn sm" href="https://github.com/hqn07/rostrum/releases/latest">Download</a></div></header>
+<main id="main"><div class="wrap doc"><h1>Privacy</h1><p>Last updated 2026-11-04.</p>
+<p>Short version: Rostrum keeps your data on your Mac. It has no account, no analytics and no telemetry, and nothing is sent to the developer unless you email it yourself.</p>
+<h2>What stays on your Mac</h2>
+<p>Your courses, assignments, notes, transcripts and flashcards live in one data file in Rostrum’s folder in Application Support. Recordings, board photos and files you attach are kept separately from that file, in the same folder, and are not part of iCloud sync. Your AI keys and your Canvas API token are stored in your Mac’s Keychain.</p>
+<p>Speech recognition happens on your Mac. Apple Speech runs on the device, and Rostrum will not use it for a language it can’t do on the device, so it never sends audio to Apple. Whisper also runs on your Mac; its model is downloaded once from Hugging Face.</p>
+<h2>AI providers you choose</h2>
+<p>The AI is off until you set it up. The on-device engine and Ollama on your own Mac send nothing off your Mac. If you pick a hosted engine (an OpenAI-compatible provider such as OpenAI or DeepSeek, or Claude), Rostrum sends that provider text using your key. The provider’s own terms and privacy policy apply to what it receives. Once a hosted engine is set, some of that happens without you pressing anything:</p>
+<ul>
+<li><strong>While you record,</strong> a summary of what has been said so far is requested every few minutes, so Voice Note can show it. This is a setting: Settings ▸ Intelligence ▸ <strong>Summarize while recording</strong>. Turn it off and nothing is sent while you record.</li>
+<li><strong>On Today,</strong> your top assignment and a short brief of your week (study time, open work with its course, due dates and grades) are sent to write the one-line suggestion.</li>
+<li><strong>When you save a recording,</strong> a sample of the transcript is sent to guess its course if the schedule doesn’t say, and to write its title.</li></ul>
+<p>Everything else is sent only when you use an AI feature: the note, transcript, slides, PDF pages or images that request needs. Rostrum never sends your whole data file.</p>
+<h2>Canvas and calendar feeds</h2>
+<p>If you connect a Canvas calendar feed or another calendar feed (.ics), Rostrum contacts that address directly to fetch your due dates. A feed link can contain a private token. The link is stored in the data file, so it syncs through iCloud if you turn sync on. A Canvas API token stays in the Keychain. Calendar and Reminders access, if you allow it, is handled by macOS.</p>
+<h2>Other network use</h2>
+<p>Features you use contact these sites, which see the request as with any web request:</p>
+<ul>
+<li>Hugging Face, for Whisper speech models.</li>
+<li>Open Library and Google Books, to look up books and covers.</li>
+<li>Crossref, OpenAlex and arXiv, to look up papers and citations.</li>
+<li>Wikipedia, for summaries you ask for.</li>
+<li>Google News RSS and any feeds you add, for News.</li>
+<li>Google’s favicon service, which receives the domain of each link you save, to show its icon.</li>
+<li>The website itself, when you save a link to the Reading List, cite from a URL, or save a page as a PDF, so Rostrum can read its title, details or images.</li>
+<li>Your school’s Canvas site, if you connect Canvas, to fetch your courses and files.</li></ul>
+<h2>iCloud</h2>
+<p>If you turn on iCloud sync, Rostrum moves its data file into your iCloud Drive, and Apple syncs it through your own account. The developer cannot see it. Recordings, board photos and attached files are not in that file and do not sync.</p>
+<h2>Crashes and diagnostics</h2>
+<p>Rostrum keeps a local log of technical events and notes if it quit unexpectedly. These stay on your Mac. Settings ▸ Diagnostics can email a report to the developer, but only if you press send, and it leaves out note and transcript text.</p>
+<h2>Contact</h2>
+<p>Questions: <a href="mailto:support@rostrumstudy.app?subject=Rostrum%20privacy">support@rostrumstudy.app</a>.</p>
+</div></main>
+<footer><div class="wrap"><span>© 2026 Rostrum</span><a href="/privacy.html">Privacy</a><a href="/support.html">Support</a></div></footer>
+</body></html>
