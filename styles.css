@@ -57,3 +57,12 @@ footer a{color:var(--fine)}
 @keyframes shuffle{0%{z-index:6;transform:none;opacity:1}45%{z-index:6;transform:translate(9%,-3%) rotate(2deg);opacity:1}46%{z-index:1}100%{z-index:1}}
 @media (prefers-reduced-motion:reduce){.card.out{animation:none}}
 @media (max-width:520px){.tabs button{font-size:13px}}
+
+.thanks{max-width:640px;text-align:center;padding-top:44px;padding-bottom:56px}.thanks h1{font-size:clamp(30px,5vw,38px);letter-spacing:-.6px}.thanks p{color:var(--mute)}
+.codebox{text-align:left;margin-top:26px}.codebox .fine{margin:0 0 6px}
+.code{font:13px ui-monospace,Menlo,monospace;background:var(--tile);border:1px solid var(--line);border-radius:10px;padding:14px;word-break:break-all;line-height:1.5}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px}.row .fine{margin:0}
+.ghost{border:0;background:var(--tile);color:var(--link);font:inherit;font-size:15px;font-weight:600;border-radius:10px;padding:12px 20px;cursor:pointer}.ghost:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.pro{padding-bottom:48px}.pro table{border-collapse:collapse;width:100%}.pro th,.pro td{padding:10px 12px;border-bottom:1px solid var(--line);font-size:16px;text-align:center}.pro th:first-child{text-align:left}.pro tbody th{font-weight:400;color:var(--mute)}
+.pro .buy{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:18px}.pro .buy .fine{margin:0}
+@media (max-width:520px){.pro th,.pro td{padding:8px 6px;font-size:15px}.row{flex-direction:column;align-items:stretch;text-align:center}}

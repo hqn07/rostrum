@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer"><meta name="robots" content="noindex">
+<title>Thanks · Rostrum</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css?v=5"></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap"><a class="brand" href="/"><img src="/icon.svg" alt="">Rostrum</a></div></header>
+<main id="main"><div class="wrap thanks">
+<div id="wait" role="status"><h1>Getting your code…</h1><p>This takes a few seconds.</p></div>
+<div id="ok" hidden><h1>Thanks. You’re Pro.</h1><p>One step left: open Rostrum and add your code.</p>
+<a class="btn" id="open" href="#">Open in Rostrum</a>
+<p class="fine">It will fill in your code. Press Activate, then Restart.</p>
+<div class="codebox"><div class="fine">Or paste it in Settings ▸ Plan</div><div class="code" id="code"></div>
+<div class="row"><span class="fine">We’ll also email this to you.</span><button type="button" class="ghost" id="copy">Copy code</button></div></div>
+<p class="fine">Don’t have Rostrum yet? <a href="https://github.com/hqn07/rostrum/releases/latest/download/Rostrum.dmg">Download Rostrum</a>.</p></div>
+<div id="missing" hidden><h1>We couldn’t find a paid order</h1><p>If you just paid, wait a minute and reload this page. If you were charged, email <a href="mailto:support@rostrumstudy.app?subject=Rostrum%20code">support@rostrumstudy.app</a> and we’ll sort it out.</p></div>
+<div id="help" hidden><h1>Let’s get this sorted</h1><p>We couldn’t show your code here. Email <a href="mailto:support@rostrumstudy.app?subject=Rostrum%20code">support@rostrumstudy.app</a> and we’ll help you.</p></div>
+<div id="later" hidden><h1>Your code is on its way</h1><p>We couldn’t show it here right now. We’ll email it to the address you paid with. If it doesn’t arrive, email <a href="mailto:support@rostrumstudy.app?subject=Rostrum%20code">support@rostrumstudy.app</a>.</p></div>
+</div></main>
+<footer><div class="wrap"><span>© 2026 Rostrum</span><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a></div></footer>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var id=new URLSearchParams(location.search).get('session_id');
+// Keep the order id for a reload in this tab (sessionStorage), and take it out of the address bar and history.
+// The code is never put in the URL, title or a log.
+try{if(id)sessionStorage.setItem('sid',id);else id=sessionStorage.getItem('sid')}catch(e){}
+history.replaceState(null,'',location.pathname);
+function show(name){['wait','ok','missing','help','later'].forEach(function(n){$(n).hidden=n!==name})}
+function showCode(code){
+ $('code').textContent=code;
+ $('open').href='studybar://license?code='+encodeURIComponent(code);
+ show('ok');
+}
+// 200 shows the code; 402/404 no paid order; 409/410 support; 502 or a network failure retries, then "we'll email".
+function fetchCode(tries){
+ return fetch('https://license.rostrumstudy.app/code?session_id='+encodeURIComponent(id),{referrerPolicy:'no-referrer',cache:'no-store'}).then(function(r){
+  if(r.status===200)return r.json().then(function(j){return j&&typeof j.code==='string'&&j.code?{code:j.code}:{state:'later'}});
+  if(r.status===402||r.status===404)return {state:'missing'};
+  if(r.status===409||r.status===410)return {state:'help'};
+  throw 0;
+ }).catch(function(){
+  if(tries<=1)return {state:'later'};
+  return new Promise(function(res){setTimeout(res,1500*(4-tries+1))}).then(function(){return fetchCode(tries-1)});
+ });
+}
+$('copy').addEventListener('click',function(){
+ var b=$('copy'),t=$('code').textContent;
+ function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy code'},2000)}
+ function fallback(){var s=getSelection(),r=document.createRange();r.selectNodeContents($('code'));s.removeAllRanges();s.addRange(r);try{document.execCommand('copy')&&done()}catch(e){}}
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(done,fallback);else fallback();
+});
+if(!id)show('missing');
+else fetchCode(4).then(function(o){if(o.code)showCode(o.code);else show(o.state)});
+})();
+</script>
+</body></html>
