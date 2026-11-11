@@ -6,20 +6,17 @@
     <description>Rostrum updates</description>
     <language>en</language>
     <item>
-      <title>Version 3.5.1</title>
-      <pubDate>Wed, 11 Nov 2026 16:46:48 +0000</pubDate>
-      <sparkle:version>9</sparkle:version>
-      <sparkle:shortVersionString>3.5.1</sparkle:shortVersionString>
+      <title>Version 3.5.2</title>
+      <pubDate>Wed, 11 Nov 2026 18:07:29 +0000</pubDate>
+      <sparkle:version>10</sparkle:version>
+      <sparkle:shortVersionString>3.5.2</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <description sparkle:format="markdown"><![CDATA[
-- **PDFs from Ross:** ask for a PDF, sheet or handout and Ross writes the whole thing and offers it as a document card with Open, Save PDF… and Save to Notes. No more "I can't make a PDF", and no more PDFs holding only a one-line summary.
-- **Scroll while Ross answers:** you can scroll up while an answer is still coming in; "Jump to latest" brings you back. Same in the Assistant and the Notes Ask panel.
-- **Export window:** the options at the top no longer squeeze together; a divider line (---) prints as a line.
-- **Snippets keywords:** typing a keyword like ;ext then space now works in email drafts, not just Notes.
-- **Blanks:** [Name]-style blanks are highlighted and Tab jumps to them, like {name}.
-- **Delete:** snippets and drafts have a visible Delete button.
+- **Update notice:** when a new version is ready, Rostrum tells you with a small popover from the menu bar and a bar at the bottom of the window. Nothing installs until you click Update. Rostrum now checks every 6 hours.
+- **Free semester of Pro:** try Pro free for 4 months from rostrumstudy.app, no card needed. When a trial ends, Rostrum says so once; everything free keeps working, including AI with your own key, and nothing is deleted.
+- **Buy Pro:** Settings ▸ Plan has a Buy link.
 ]]></description>
-      <enclosure url="https://github.com/hqn07/rostrum/releases/download/v3.5.1/Rostrum-3.5.1.dmg" sparkle:edSignature="HEp2Jcf/MBXVjFy/26oh50RWGtnff/EzWfmtPiis8Iw+U0h+cCkkOFKpRx247haHQV471uzCusrlcZQcsm4PBQ==" length="22201945" type="application/octet-stream"/>
+      <enclosure url="https://github.com/hqn07/rostrum/releases/download/v3.5.2/Rostrum-3.5.2.dmg" sparkle:edSignature="tEcH33spSbycEI3yE4uCjwkjaBCqDcEzQFsjOa6wBbHP0pzXLKp4Y0QVy2/LfS7cqN5S6s0LHXIxfBndVqZjAg==" length="22243609" type="application/octet-stream"/>
     </item>
   </channel>
 </rss>
