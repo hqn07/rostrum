@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Download Rostrum for Mac: free lecture recorder</title><meta name="description" content="Download Rostrum 3.5.1 for Mac (21 MB). Free to use. Needs an Apple silicon Mac and macOS 14 or later.">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="canonical" href="https://rostrumstudy.app/download.html"><meta property="og:type" content="website"><meta property="og:site_name" content="Rostrum"><meta property="og:title" content="Download Rostrum for Mac: free lecture recorder"><meta property="og:description" content="Download Rostrum 3.5.1 for Mac (21 MB). Free to use. Needs an Apple silicon Mac and macOS 14 or later."><meta property="og:url" content="https://rostrumstudy.app/download.html"><meta property="og:image" content="https://rostrumstudy.app/img/og-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="/styles.css?v=6"></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap"><a class="brand" href="/"><img src="/icon.svg" alt="">Rostrum</a><a class="btn sm" href="/download.html">Download</a></div></header>
+<main id="main"><div class="wrap doc"><h1>Download Rostrum for Mac</h1>
+<p class="lead">Version 3.5.1 · 21 MB · Apple silicon Mac · macOS 14 or later</p>
+<p><a class="btn" href="https://github.com/hqn07/rostrum/releases/latest/download/Rostrum.dmg">Download Rostrum</a></p>
+<p class="fine">Free to download and use. Pro is optional and costs $19.99 once.</p>
+<h2>Install</h2>
+<ol>
+<li>Open the downloaded <strong>Rostrum.dmg</strong> and drag Rostrum to your <strong>Applications</strong> folder.</li>
+<li>Open Rostrum from Applications. Apple has checked the app for malware (it is notarized), so it opens like any other app. If macOS asks whether you want to open an app downloaded from the internet, choose <strong>Open</strong>.</li>
+<li>If macOS still blocks it, open <strong>System Settings ▸ Privacy &amp; Security</strong>, scroll down and choose <strong>Open Anyway</strong>.</li>
+<li>The first time you record, macOS asks to use the microphone. Choose <strong>Allow</strong>.</li></ol>
+<p>Rostrum updates itself. You can turn that off in Settings ▸ About. Coming from StudyBar? See <a href="/support.html#studybar">Support</a>.</p>
+<h2>Is my Mac supported?</h2>
+<p>Rostrum needs a Mac with Apple silicon (M1 or later) running macOS 14 or later. To check, choose <strong>Apple menu ▸ About This Mac</strong>. If it says Chip: Apple M-something, you are fine. Intel Macs are not supported.</p>
+<h2>On a phone?</h2>
+<p>Rostrum is a Mac app, so it cannot be installed on a phone. <a href="mailto:?subject=Rostrum%20for%20Mac&amp;body=https://rostrumstudy.app/download.html">Email this page to yourself</a> and open it on your Mac.</p>
+<section id="trial" class="trialbox"><h2>Try Pro free for a semester</h2>
+<p>Enter your email and we send you a code that turns Pro on for 4 months, a full semester. No card, no account. When the 4 months end, Pro sections are hidden until you buy. Nothing is deleted, and buying brings them back as they were.</p>
+<form class="trial" id="trial-form" novalidate>
+<label for="trial-email">Your email</label>
+<input id="trial-email" type="email" autocomplete="email" inputmode="email" required placeholder="you@school.edu">
+<div class="cf-turnstile" data-action="trial" data-sitekey="0x4AAAAAAF9FbjijO-TP_6MR"></div>
+<label class="check"><input type="checkbox" id="trial-optin"> Also send me an occasional email about Rostrum (optional).</label>
+<button class="btn" type="submit">Email me a free month of Pro</button>
+<p class="fine" id="trial-msg" role="status" aria-live="polite"></p>
+</form>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script>
+(function(){
+var f=document.getElementById('trial-form'),m=document.getElementById('trial-msg'),b=f.querySelector('button');
+var say={400:'That did not work. Check the email address and the box above, then try again.',409:'A code was already sent to this address in the last 30 days. Check your spam folder. You can ask for a new one when it ends.',429:'Too many tries from this network. Please wait an hour.',502:'The email could not be sent. Please try again in a minute.',503:'The trial is not available right now. Email support@rostrumstudy.app and we will send a code.'};
+f.addEventListener('submit',function(e){
+ e.preventDefault();
+ var email=document.getElementById('trial-email').value.trim(),t=f.querySelector('[name=cf-turnstile-response]');
+ if(!email){m.textContent='Enter your email address.';return}
+ if(!t||!t.value){m.textContent='Please wait for the check above to finish.';return}
+ b.disabled=true;m.textContent='Sending…';
+ fetch('https://license.rostrumstudy.app/trial',{method:'POST',headers:{'Content-Type':'application/json'},referrerPolicy:'no-referrer',body:JSON.stringify({email:email,optin:document.getElementById('trial-optin').checked,token:t.value})})
+ .then(function(r){return r.json().catch(function(){return {}}).then(function(j){
+  if(r.ok&&j.ok){m.textContent='Sent. Check your inbox (and spam) for the code. It works until '+j.ends+'.';f.reset()}
+  else m.textContent=say[r.status]||'Something went wrong. Please try again.';
+ })})
+ .catch(function(){m.textContent='Could not reach the server. Check your connection and try again.'})
+ .then(function(){b.disabled=false;if(window.turnstile)try{turnstile.reset()}catch(e){}});
+});
+})();
+</script>
+<p class="fine">Your email is used to send the code and to stop repeat requests, and the hashed copy is deleted after 4 months. We keep the address itself only if you tick the box. <a href="/privacy.html#trial">Details</a>.</p></section>
+<h2>Questions</h2>
+<p>See the <a href="/faq.html">FAQ</a>, <a href="/changelog.html">what changed in each version</a>, or <a href="/support.html">Support</a>.</p></div></main>
+<footer><div class="wrap"><span>© 2026 Rostrum</span><a href="/download.html">Download</a><a href="/faq.html">FAQ</a><a href="/changelog.html">Changelog</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a></div></footer>
+</body></html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Final grade calculator: what do I need on the final?</title><meta name="description" content="Free final grade calculator. Enter your categories, weights and scores, and see what you need on the final exam to get the grade you want. Runs in your browser.">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="canonical" href="https://rostrumstudy.app/final-grade-calculator.html"><meta property="og:type" content="website"><meta property="og:site_name" content="Rostrum"><meta property="og:title" content="Final grade calculator: what do I need on the final?"><meta property="og:description" content="Free final grade calculator. Enter your categories, weights and scores, and see what you need on the final exam to get the grade you want. Runs in your browser."><meta property="og:url" content="https://rostrumstudy.app/final-grade-calculator.html"><meta property="og:image" content="https://rostrumstudy.app/img/og-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Final grade calculator","url":"https://rostrumstudy.app/final-grade-calculator.html","applicationCategory":"EducationalApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script><link rel="stylesheet" href="/styles.css?v=6"></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap"><a class="brand" href="/"><img src="/icon.svg" alt="">Rostrum</a><a class="btn sm" href="/download.html">Download</a></div></header>
+<main id="main"><div class="wrap doc"><h1>Final grade calculator</h1>
+<p class="lead">What do you need on the final to get the grade you want? Enter your categories, what each is worth and your score so far.</p>
+<div class="calc">
+<div class="chead" aria-hidden="true"><span>Category</span><span>Weight %</span><span>Your score %</span><span></span></div>
+<div id="cats"></div>
+<p><button type="button" class="ghost" id="add">Add a category</button></p>
+<div class="frow"><label for="fw">Final exam weight %</label><input id="fw" type="number" min="0" max="100" step="any" inputmode="decimal" value="40">
+<label for="tg">Grade you want %</label><input id="tg" type="number" min="0" max="100" step="any" inputmode="decimal" value="85"></div>
+<p class="result" id="result" role="status" aria-live="polite"></p></div>
+<p class="fine">This page runs in your browser. Nothing you type is sent or saved. It uses the usual weighted average: each category's score times its weight, added up.</p>
+<h2>How it works</h2>
+<p>Your grade is the sum of each category's score times its weight, divided by the total weight. If the final is worth 40% and you want 90% overall, the calculator solves for the final score that makes the total come out right. Check your syllabus for rules this page does not know about, such as dropped lowest scores or a different letter scale.</p>
+<h2>Keep track all term</h2>
+<p>Rostrum does this for every course. You score each item (Exam 1, 42/50), use your syllabus's own letter scale and "drop lowest", and see what you need on what's left. Free to download, Mac only.</p>
+<div class="cta"><a class="btn" href="/download.html">Download for Mac</a><a class="btn alt" href="/download.html#trial">Try Pro free for a month</a></div>
+<p class="fine">Free to download · Apple silicon Mac · macOS 14 or later · Pro is a one-time $19.99 with a 30-day refund.</p>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var cats=$('cats');
+function row(name,w,a){
+ var d=document.createElement('div');d.className='crow';
+ d.innerHTML='<label><span class="lb">Category</span><input class="nm" type="text" placeholder="Homework" value="'+(name||'')+'"></label>'
+  +'<label><span class="lb">Weight %</span><input class="wt" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="20" value="'+(w==null?'':w)+'"></label>'
+  +'<label><span class="lb">Your score %</span><input class="sc" type="number" min="0" max="200" step="any" inputmode="decimal" placeholder="88" value="'+(a==null?'':a)+'"></label>'
+  +'<button type="button" class="ghost rm" aria-label="Remove this row">Remove</button>';
+ d.querySelector('.rm').addEventListener('click',function(){d.remove();calc()});
+ d.addEventListener('input',calc);cats.appendChild(d);
+}
+function num(v){var n=parseFloat(v);return isFinite(n)?n:null}
+function calc(){
+ var res=$('result'),sumW=0,sumP=0,bad=false,n=0;
+ [].forEach.call(cats.querySelectorAll('.crow'),function(r){
+  var w=num(r.querySelector('.wt').value),a=num(r.querySelector('.sc').value);
+  if(w==null&&a==null)return;
+  if(w==null||a==null||w<0||a<0){bad=true;return}
+  sumW+=w;sumP+=w*a;n++;
+ });
+ var fw=num($('fw').value),tg=num($('tg').value);
+ if(bad){res.textContent='Fill in both the weight and the score for each row, or clear the row.';return}
+ if(fw==null||fw<=0||tg==null){res.textContent='Enter the final exam weight and the grade you want.';return}
+ var total=sumW+fw,cur=sumW>0?sumP/sumW:null;
+ var need=(tg*total-sumP)/fw,msg='';
+ if(cur!=null)msg+='Your average so far: '+cur.toFixed(1)+'%. ';
+ if(Math.abs(total-100)>0.01)msg+='Your weights add up to '+total.toFixed(1)+', not 100, so they are treated as shares of '+total.toFixed(1)+'. ';
+ if(need<=0)msg+='You already have '+tg+'% even with 0% on the final.';
+ else if(need>100)msg+='You would need '+need.toFixed(1)+'% on the final to finish with '+tg+'%. That is above 100%, so it only works with extra credit.';
+ else msg+='You need '+need.toFixed(1)+'% on the final to finish with '+tg+'%.';
+ res.textContent=msg;
+}
+$('add').addEventListener('click',function(){row();});
+['fw','tg'].forEach(function(i){$(i).addEventListener('input',calc)});
+row('Homework',20,90);row('Midterm',30,78);row('Quizzes',10,85);
+calc();
+})();</script></div></main>
+<footer><div class="wrap"><span>© 2026 Rostrum</span><a href="/download.html">Download</a><a href="/faq.html">FAQ</a><a href="/changelog.html">Changelog</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a></div></footer>
+</body></html>
