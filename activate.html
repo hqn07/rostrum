@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer"><meta name="robots" content="noindex">
+<title>Activate Rostrum Pro · Rostrum</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="stylesheet" href="/styles.css?v=6"></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap"><a class="brand" href="/"><img src="/icon.svg" alt="">Rostrum</a></div></header>
+<main id="main"><div class="wrap thanks">
+<div id="ok" hidden><h1>Activate Rostrum Pro</h1><p>Open Rostrum with your code filled in.</p>
+<a class="btn" id="open" href="#">Open in Rostrum</a>
+<p class="fine">Press Activate, then restart Rostrum.</p>
+<div class="codebox"><div class="fine">Or paste it in Settings ▸ Plan</div><div class="code" id="code"></div>
+<div class="row"><span class="fine"></span><button type="button" class="ghost" id="copy">Copy code</button></div></div>
+<p class="fine">Nothing happened? <a href="/download.html">Download Rostrum first</a>, then come back to this page.</p></div>
+<div id="none" hidden><h1>No code here</h1><p>Open the link from your email again. Or <a href="/download.html">download Rostrum</a> and paste your code in Settings ▸ Plan.</p></div>
+</div></main>
+<footer><div class="wrap"><span>© 2026 Rostrum</span><a href="/download.html">Download</a><a href="/faq.html">FAQ</a><a href="/changelog.html">Changelog</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a></div></footer>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+// The code is in the fragment, so it is never sent to a server or a log. Take it out of the address bar and history.
+var code='';
+try{code=decodeURIComponent(location.hash.slice(1)).trim()}catch(e){}
+history.replaceState(null,'',location.pathname);
+if(!/^[A-Za-z0-9._~-]{20,4000}$/.test(code)){$('none').hidden=false}
+else{
+ $('code').textContent=code;
+ $('open').href='studybar://license?code='+encodeURIComponent(code);
+ $('ok').hidden=false;
+}
+$('copy').addEventListener('click',function(){
+ var b=$('copy'),t=$('code').textContent;
+ function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy code'},2000)}
+ function fallback(){var s=getSelection(),r=document.createRange();r.selectNodeContents($('code'));s.removeAllRanges();s.addRange(r);try{document.execCommand('copy')&&done()}catch(e){}}
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(done,fallback);else fallback();
+});
+})();
+</script>
+</body></html>
