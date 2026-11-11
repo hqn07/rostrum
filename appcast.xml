@@ -6,25 +6,30 @@
     <description>Rostrum updates</description>
     <language>en</language>
     <item>
-      <title>Version 3.4.0</title>
-      <pubDate>Mon, 09 Nov 2026 19:47:19 +0000</pubDate>
-      <sparkle:version>7</sparkle:version>
-      <sparkle:shortVersionString>3.4.0</sparkle:shortVersionString>
+      <title>Version 3.5.0</title>
+      <pubDate>Wed, 11 Nov 2026 04:56:40 +0000</pubDate>
+      <sparkle:version>8</sparkle:version>
+      <sparkle:shortVersionString>3.5.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <description sparkle:format="markdown"><![CDATA[
-- **Refunded codes:** Rostrum checks for turned-off codes about once a day instead of every two weeks.
-- **Copy and paste:** ⌘C, ⌘V, ⌘X, ⌘A and ⌘Z work everywhere again, including Notes and the Tutor.
-- **Copy a whole answer:** Tutor and Assistant answers have a Copy button.
-- **Headings:** Heading 1–3 keep their sizes when you stop editing a note.
-- **Style menu:** each style is shown at its own size.
-- **Stop a quiz or exam:** end it early and only the questions you did are scored.
-- **Done in Notes:** saves the note and leaves editing.
-- **Notes archive:** notes from last term's courses fold into an Archive at the bottom of the list.
-- **Notes filter:** now sits above the list of notes.
-- **Miscellaneous:** the Tools group in the sidebar is now called Miscellaneous.
-- **What's new:** the update window shows what changed (it was empty).
+- **Meet Ross:** the Tutor has a name. Ask for a hint and Ross asks for your try first, then gives one hint or one step at a time; Show the solution ends with a similar problem to try.
+- **What Ross knows:** a profile for each course in Progress — topics, how many hints you usually need, mistakes that keep coming back, and how you like to learn. Edit, hide or clear any of it, or switch it off.
+- **Taught for the subject:** each course gets a subject (picked from its code, changeable in one tap) that shapes Ross's help, the quiz questions and the study guide.
+- **How sure are you:** quizzes ask Sure / Think so / Guess before the answer; Progress shows how sure versus how right, and the "sure but wrong" ones.
+- **Missed questions come back:** later in the same quiz, and the next day as flashcards.
+- **Better study guides:** worked example, then one to finish, then one to do yourself; cover-and-recall questions; a page of your own mistakes; space to write when printed. Choose the length, split into titled parts, and pick what goes in.
+- **Better quiz questions:** broken or giveaway questions are dropped.
+- **Grades:** score each item (Exam 1, 42/50), use the syllabus's own letter scale and "drop lowest", see what you need on what's left, and enter a score when you mark work done.
+- **Reading:** each open book gets its own tab, with Ask about the page you're on, Highlights and Notes beside it.
+- **Notes:** a sidebar with Pinned, Recent, courses, tags and Archive; a toolbar with labels; and a small format bar over selected text.
+- **Snippets:** write emails right in Rostrum — drag snippets in, fill the blanks with Tab, and Copy for email keeps bold, lists and links in Gmail, Outlook and iCloud Mail.
+- **Today and Insights:** Edit to remove, resize, reorder or add widgets.
+- **Study:** a cleaner look, browser-style tabs, and your sources grouped by Notes, Slides, Textbook and Handouts.
+- **Tutor tools:** ask Ross for a formula sheet, flashcards, a note, a study plan or a study guide, and it makes it.
+- **What's new:** the "Rostrum was updated" card shows each change in full.
+- **Assistant:** works with GPT-5.6 Luna again.
 ]]></description>
-      <enclosure url="https://github.com/hqn07/rostrum/releases/download/v3.4.0/Rostrum-3.4.0.dmg" sparkle:edSignature="8KXiYBMyxFJoL1nZRa8Vz3agfwnhmqW/Y3X7WEbQmzjyxzJmv5mjYqwQDctTi/amRntwfzSoeBonrZRiS88RDA==" length="20543303" type="application/octet-stream"/>
+      <enclosure url="https://github.com/hqn07/rostrum/releases/download/v3.5.0/Rostrum-3.5.0.dmg" sparkle:edSignature="SdHNjYwThMyIfQpgTXenVSBOHuJal+8/w1EOypSFiHHF6OC7Pk3CB/+kntFi7LZFD6bPUKOulUBPciVBo324BA==" length="22108282" type="application/octet-stream"/>
     </item>
   </channel>
 </rss>
