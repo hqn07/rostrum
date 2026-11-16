@@ -6,15 +6,22 @@
     <description>Rostrum updates</description>
     <language>en</language>
     <item>
-      <title>Version 3.5.3</title>
-      <pubDate>Thu, 12 Nov 2026 02:37:38 +0000</pubDate>
-      <sparkle:version>11</sparkle:version>
-      <sparkle:shortVersionString>3.5.3</sparkle:shortVersionString>
+      <title>Version 3.6.0</title>
+      <pubDate>Mon, 16 Nov 2026 21:28:36 +0000</pubDate>
+      <sparkle:version>13</sparkle:version>
+      <sparkle:shortVersionString>3.6.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <description sparkle:format="markdown"><![CDATA[
-- **Study is fast again:** opening Study or switching its tabs no longer freezes for several seconds in a course with a syllabus.
+- **Plan next term:** add next term with its dates, then its courses and class times now. They stay out of this week's Schedule, Today and reminders until the term starts, and Courses shows current, next and past terms with an overall GPA (marked est. until final grades are in).
+- **More than one Mac?** Update Rostrum on all of them before planning a term. An older version can drop the new term dates when it saves.
+- **Undo and Redo in notes work:** every change, including bold, headings, lists, colors, formulas, tables and images, is one Undo step, and Redo puts it back. Undo no longer skips steps or deletes the wrong text.
+- **View mode keeps your formatting:** headings, bold, italic, quotes and code show while reading, not only while editing.
+- **Edit and Find while reading:** a labelled Edit button, and Find (⌘F) opens the note with its search bar.
+- **Spell check:** misspelled words get a red underline as you type; right-click for suggestions. Turn it off in Edit ▸ Check Spelling While Typing.
+- **Link button:** paste a web address or pick one of your notes. It no longer makes a new note.
+- **Steadier editor:** tool hints and the color picker float over the note instead of pushing it down, and the writing area has a visible edge. The "summarize it?" suggestion is gone; Summarize is still in the AI menu.
 ]]></description>
-      <enclosure url="https://github.com/hqn07/rostrum/releases/download/v3.5.3/Rostrum-3.5.3.dmg" sparkle:edSignature="xNHsHEgc/+GESj58XG0wbjoLTNEo4PkQ+/fu+ptUkL3W5kmzndYQPuYwtx3ucB5z/ZxJou37h7BpRy0OokwKAQ==" length="22246912" type="application/octet-stream"/>
+      <enclosure url="https://github.com/hqn07/rostrum/releases/download/v3.6.0/Rostrum-3.6.0.dmg" sparkle:edSignature="Bc2KPtTUd4jCHs9iHoiaBegEzbMJaPc1jcBT2CyvlyYi+Ngm0L3fBqwe95wKPxJMHDxYAXSJ75m7d2SmyosrBQ==" length="22624104" type="application/octet-stream"/>
     </item>
   </channel>
 </rss>
