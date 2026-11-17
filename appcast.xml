@@ -6,22 +6,25 @@
     <description>Rostrum updates</description>
     <language>en</language>
     <item>
-      <title>Version 3.6.0</title>
-      <pubDate>Mon, 16 Nov 2026 21:28:36 +0000</pubDate>
-      <sparkle:version>13</sparkle:version>
-      <sparkle:shortVersionString>3.6.0</sparkle:shortVersionString>
+      <title>Version 3.7.0</title>
+      <pubDate>Tue, 17 Nov 2026 22:36:08 +0000</pubDate>
+      <sparkle:version>14</sparkle:version>
+      <sparkle:shortVersionString>3.7.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <description sparkle:format="markdown"><![CDATA[
-- **Plan next term:** add next term with its dates, then its courses and class times now. They stay out of this week's Schedule, Today and reminders until the term starts, and Courses shows current, next and past terms with an overall GPA (marked est. until final grades are in).
-- **More than one Mac?** Update Rostrum on all of them before planning a term. An older version can drop the new term dates when it saves.
-- **Undo and Redo in notes work:** every change, including bold, headings, lists, colors, formulas, tables and images, is one Undo step, and Redo puts it back. Undo no longer skips steps or deletes the wrong text.
-- **View mode keeps your formatting:** headings, bold, italic, quotes and code show while reading, not only while editing.
-- **Edit and Find while reading:** a labelled Edit button, and Find (⌘F) opens the note with its search bar.
-- **Spell check:** misspelled words get a red underline as you type; right-click for suggestions. Turn it off in Edit ▸ Check Spelling While Typing.
-- **Link button:** paste a web address or pick one of your notes. It no longer makes a new note.
-- **Steadier editor:** tool hints and the color picker float over the note instead of pushing it down, and the writing area has a visible edge. The "summarize it?" suggestion is gone; Summarize is still in the AI menu.
+- **Every feature is free.** Practice exams, Past exams, the most accurate Whisper models, Insights, Reading, Library, Citations, Convert, Snippets, printing, Fix words from slides and the weekly goal no longer need a code.
+- **Pro is now Supporter.** If Rostrum helps you, pay what you want from $3 to keep it going. Supporters get a badge and can pick an app icon (Settings ▸ Appearance). Pro codes you already have are Supporter codes and keep working.
+- **Past exams:** add the old exams your professor shared, with or without a key. Rostrum reads each problem, shows what the exam tests and how often, builds a study guide around it, and writes a practice exam of the same shape, multiple choice when the original was.
+- **Study guides by week:** a guide can be split into parts by week, read oldest first, with titled parts you can move between.
+- **Courses as a table:** one layout for every term, with past terms that fold away. Terms are picked from a list, so "Summer2026" and "Summer 2026" can't split into two.
+- **Course details:** mark a class Online (live or self-paced, with a meeting link), set a status (Taking, Dropped, Withdrawn, Retaken), and choose from twelve distinct colors or a custom one. Schedule cards lead with the course name, not the registration number.
+- **Your school's grading:** set the passing grade and GPA scale in Settings, or a passing grade per course.
+- **Notes font:** pick the font, size and spacing for notes, including a rounded face and an extra large size; it carries into reading view, study guides, Ross and PDFs.
+- **Density:** Comfortable or Compact rows for courses, assignments, notes and study sources.
+- **Sidebar:** drag its edge to resize it or fold it down to icons.
+- **Links in notes:** hover to see the address; a link whose text names a different site asks before opening.
 ]]></description>
-      <enclosure url="https://github.com/hqn07/rostrum/releases/download/v3.6.0/Rostrum-3.6.0.dmg" sparkle:edSignature="Bc2KPtTUd4jCHs9iHoiaBegEzbMJaPc1jcBT2CyvlyYi+Ngm0L3fBqwe95wKPxJMHDxYAXSJ75m7d2SmyosrBQ==" length="22624104" type="application/octet-stream"/>
+      <enclosure url="https://github.com/hqn07/rostrum/releases/download/v3.7.0/Rostrum-3.7.0.dmg" sparkle:edSignature="cnrJprKc8no6fiudomIw1zcTBZhKz3/Ei/EJxNbuWzqmsEK5XxoJIZkbK8i7nTzp+FJ8yc1mlDb7deABqVH4Cw==" length="24080687" type="application/octet-stream"/>
     </item>
   </channel>
 </rss>
