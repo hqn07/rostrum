@@ -6,19 +6,17 @@
     <description>Rostrum updates</description>
     <language>en</language>
     <item>
-      <title>Version 3.7.1</title>
-      <pubDate>Wed, 18 Nov 2026 03:10:57 +0000</pubDate>
-      <sparkle:version>15</sparkle:version>
-      <sparkle:shortVersionString>3.7.1</sparkle:shortVersionString>
+      <title>Version 3.7.2</title>
+      <pubDate>Wed, 18 Nov 2026 03:45:51 +0000</pubDate>
+      <sparkle:version>16</sparkle:version>
+      <sparkle:shortVersionString>3.7.2</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <description sparkle:format="markdown"><![CDATA[
-- **Edit term on one screen:** a term's name and dates, then each course with its class times, plus Add course and Import schedule. Everything saves together, and one Undo takes it all back.
-- **Classes show their course name:** a class time with no title shows its course instead of "Class", in Schedule, Calendar, Today, reminders and search.
-- **Importing a schedule puts classes in the right term:** classes go into the term their dates fall in (or the one you're editing), match only that term's courses, and importing the same file again doesn't add duplicates.
-- **The Assistant and Ross plan terms:** they can add a course to a named term like Spring 2027, and a Tuesday/Thursday class in one step.
-- **Calendar crosses out finished work:** done assignments stay, crossed out, and so does the same item from Canvas or your calendar. Right-click to mark done.
+- **Class times aren't lost:** Edit term and the course editor keep a class time you set up even if you don't press Add, and existing class times can be edited (for example, switched to Online).
+- **Courses remembers which past terms you folded.**
+- **Settings opens instantly:** no more spinning wait each time you open it.
 ]]></description>
-      <enclosure url="https://github.com/hqn07/rostrum/releases/download/v3.7.1/Rostrum-3.7.1.dmg" sparkle:edSignature="Mvmlx9Y8rSUzjwxL4u9Vl6bqAE09FHLE8oJ2xuemup+TX+cmZAyoNUgZCWWboSXwxqiKb9f20iWBEWudZxkjAQ==" length="24219431" type="application/octet-stream"/>
+      <enclosure url="https://github.com/hqn07/rostrum/releases/download/v3.7.2/Rostrum-3.7.2.dmg" sparkle:edSignature="h7rD8BZUfUxQ6te+qVxBZVOb3XzAPjw1b/VVD7AGEwDP1aHw32q8Y1/Lgy2NLmwBpTTJWl0QfydnQP9mLgVKDQ==" length="24238280" type="application/octet-stream"/>
     </item>
   </channel>
 </rss>
