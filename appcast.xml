@@ -6,25 +6,19 @@
     <description>Rostrum updates</description>
     <language>en</language>
     <item>
-      <title>Version 3.7.0</title>
-      <pubDate>Tue, 17 Nov 2026 22:36:08 +0000</pubDate>
-      <sparkle:version>14</sparkle:version>
-      <sparkle:shortVersionString>3.7.0</sparkle:shortVersionString>
+      <title>Version 3.7.1</title>
+      <pubDate>Wed, 18 Nov 2026 03:10:57 +0000</pubDate>
+      <sparkle:version>15</sparkle:version>
+      <sparkle:shortVersionString>3.7.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <description sparkle:format="markdown"><![CDATA[
-- **Every feature is free.** Practice exams, Past exams, the most accurate Whisper models, Insights, Reading, Library, Citations, Convert, Snippets, printing, Fix words from slides and the weekly goal no longer need a code.
-- **Pro is now Supporter.** If Rostrum helps you, pay what you want from $3 to keep it going. Supporters get a badge and can pick an app icon (Settings ▸ Appearance). Pro codes you already have are Supporter codes and keep working.
-- **Past exams:** add the old exams your professor shared, with or without a key. Rostrum reads each problem, shows what the exam tests and how often, builds a study guide around it, and writes a practice exam of the same shape, multiple choice when the original was.
-- **Study guides by week:** a guide can be split into parts by week, read oldest first, with titled parts you can move between.
-- **Courses as a table:** one layout for every term, with past terms that fold away. Terms are picked from a list, so "Summer2026" and "Summer 2026" can't split into two.
-- **Course details:** mark a class Online (live or self-paced, with a meeting link), set a status (Taking, Dropped, Withdrawn, Retaken), and choose from twelve distinct colors or a custom one. Schedule cards lead with the course name, not the registration number.
-- **Your school's grading:** set the passing grade and GPA scale in Settings, or a passing grade per course.
-- **Notes font:** pick the font, size and spacing for notes, including a rounded face and an extra large size; it carries into reading view, study guides, Ross and PDFs.
-- **Density:** Comfortable or Compact rows for courses, assignments, notes and study sources.
-- **Sidebar:** drag its edge to resize it or fold it down to icons.
-- **Links in notes:** hover to see the address; a link whose text names a different site asks before opening.
+- **Edit term on one screen:** a term's name and dates, then each course with its class times, plus Add course and Import schedule. Everything saves together, and one Undo takes it all back.
+- **Classes show their course name:** a class time with no title shows its course instead of "Class", in Schedule, Calendar, Today, reminders and search.
+- **Importing a schedule puts classes in the right term:** classes go into the term their dates fall in (or the one you're editing), match only that term's courses, and importing the same file again doesn't add duplicates.
+- **The Assistant and Ross plan terms:** they can add a course to a named term like Spring 2027, and a Tuesday/Thursday class in one step.
+- **Calendar crosses out finished work:** done assignments stay, crossed out, and so does the same item from Canvas or your calendar. Right-click to mark done.
 ]]></description>
-      <enclosure url="https://github.com/hqn07/rostrum/releases/download/v3.7.0/Rostrum-3.7.0.dmg" sparkle:edSignature="cnrJprKc8no6fiudomIw1zcTBZhKz3/Ei/EJxNbuWzqmsEK5XxoJIZkbK8i7nTzp+FJ8yc1mlDb7deABqVH4Cw==" length="24080687" type="application/octet-stream"/>
+      <enclosure url="https://github.com/hqn07/rostrum/releases/download/v3.7.1/Rostrum-3.7.1.dmg" sparkle:edSignature="Mvmlx9Y8rSUzjwxL4u9Vl6bqAE09FHLE8oJ2xuemup+TX+cmZAyoNUgZCWWboSXwxqiKb9f20iWBEWudZxkjAQ==" length="24219431" type="application/octet-stream"/>
     </item>
   </channel>
 </rss>
